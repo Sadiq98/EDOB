@@ -1,0 +1,2614 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C4CF64E4-62FC-4A6F-9D18-16B6DB420441}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EDOB.Web</RootNamespace>
+    <AssemblyName>EDOB.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ActiveReports.Chart">
+      <HintPath>..\..\dlls\ActiveReports.Chart.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveReports.Document, Version=6.2.3164.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\dlls\ActiveReports.Document.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveReports.PdfExport, Version=6.2.3164.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\dlls\ActiveReports.PdfExport.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveReports6, Version=6.2.3164.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\dlls\ActiveReports6.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="ceTe.DynamicPDF.40">
+      <HintPath>..\..\dlls\ceTe.DynamicPDF.40.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.10\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Kendo.Mvc">
+      <HintPath>..\..\dlls\Kendo.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.1\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.1\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorEngine, Version=3.9.3.0, Culture=neutral, PublicKeyToken=9ee697374c7e744a, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorEngine.3.9.3\lib\net45\RazorEngine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Bundler.cs" />
+    <Compile Include="Controllers\Api\MenuController.cs" />
+    <Compile Include="Controllers\BookOnController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\OccurrenceController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Data\Customer.cs">
+      <DependentUpon>EDOBDataModel.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\CustomerContact.cs">
+      <DependentUpon>EDOBDataModel.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\EDOBDataModel.Context.cs">
+      <DependentUpon>EDOBDataModel.Context.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Data\EDOBDataModel.cs">
+      <DependentUpon>EDOBDataModel.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Data\EDOBDataModel.Designer.cs">
+      <DependentUpon>EDOBDataModel.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Data\IncidentDetail.cs">
+      <DependentUpon>EDOBDataModel.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\IncidentInvolvedUser.cs">
+      <DependentUpon>EDOBDataModel.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\IncidentReport.cs">
+      <DependentUpon>EDOBDataModel.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\IncidentReportNotification.cs">
+      <DependentUpon>EDOBDataModel.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Message.cs">
+      <DependentUpon>EDOBDataModel.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\OccurrenceCheckCall.cs">
+      <DependentUpon>EDOBDataModel.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\OccurrenceLog.cs">
+      <DependentUpon>EDOBDataModel.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\OccurrenceLogBookonUser.cs">
+      <DependentUpon>EDOBDataModel.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\OccurrenceMaster.cs">
+      <DependentUpon>EDOBDataModel.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\OccurrencePendingCheckCall.cs">
+      <DependentUpon>EDOBDataModel.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\OccurrenceType.cs">
+      <DependentUpon>EDOBDataModel.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Report.cs">
+      <DependentUpon>EDOBDataModel.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\ReportTemplate.cs">
+      <DependentUpon>EDOBDataModel.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Role.cs">
+      <DependentUpon>EDOBDataModel.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Shift.cs">
+      <DependentUpon>EDOBDataModel.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\ShiftSite.cs" />
+    <Compile Include="Data\Site.cs">
+      <DependentUpon>EDOBDataModel.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\SiteCheckCallInterval.cs">
+      <DependentUpon>EDOBDataModel.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Task.cs">
+      <DependentUpon>EDOBDataModel.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\User.cs">
+      <DependentUpon>EDOBDataModel.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\UserTask.cs">
+      <DependentUpon>EDOBDataModel.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\AdminHelper.cs" />
+    <Compile Include="Helpers\ChatHub.cs" />
+    <Compile Include="Helpers\GlobalValues.cs" />
+    <Compile Include="Helpers\LicenseHelper.cs" />
+    <Compile Include="Helpers\Startup.cs" />
+    <Compile Include="Helpers\ViewRenderHelper.cs" />
+    <Compile Include="ModelBinders\WebApiDataSourceRequestModelBinder.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\MessageDetail.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\Site.cs" />
+    <Compile Include="Models\SiteUsers.cs" />
+    <Compile Include="Models\Templates.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserDetail.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs" />
+    <Compile Include="ReportTemplates\OccurrenceCheckCalls.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportTemplates\OccurrenceCheckCalls.designer.cs">
+      <DependentUpon>OccurrenceCheckCalls.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportTemplates\OccurrenceLogItems.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportTemplates\OccurrenceLogItems.designer.cs">
+      <DependentUpon>OccurrenceLogItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportTemplates\OccurrenceMain.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportTemplates\OccurrenceMain.designer.cs">
+      <DependentUpon>OccurrenceMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\AdminServices.cs" />
+    <Compile Include="Services\CustomerServices.cs" />
+    <Compile Include="Services\OccurrenceService.cs" />
+    <Compile Include="Services\ReportServices.cs" />
+    <Compile Include="Services\UserServices.cs" />
+    <Compile Include="ViewModels\AdminViewModel.cs" />
+    <Compile Include="ViewModels\BookonViewModel.cs" />
+    <Compile Include="ViewModels\CustomerContactsViewModel.cs" />
+    <Compile Include="ViewModels\CustomerViewModel.cs" />
+    <Compile Include="ViewModels\OccurrenceViewModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ViewModels\ReportsViewModel.cs" />
+    <Compile Include="ViewModels\UserViewModels.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bundler\bundler.js" />
+    <Content Include="bundler\node.exe" />
+    <Content Include="bundler\node_modules\clean-css\index.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\clean.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\colors\hsl-to-hex.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\colors\long-to-short-hex.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\colors\rgb-to-hex.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\colors\shortener.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\images\url-rebase.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\images\url-rewriter.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\imports\inliner.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\properties\optimizer.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\properties\override-compactor.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\properties\processable.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\properties\scanner.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\properties\shorthand-compactor.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\properties\token.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\properties\validator.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\selectors\empty-removal.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\selectors\optimizer.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\selectors\tokenizer.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\text\comments.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\text\escape-store.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\text\expressions.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\text\free.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\text\name-quotes.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\text\quote-scanner.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\text\urls.js" />
+    <Content Include="bundler\node_modules\coffee-script\lib\coffee-script\browser.js" />
+    <Content Include="bundler\node_modules\coffee-script\lib\coffee-script\cake.js" />
+    <Content Include="bundler\node_modules\coffee-script\lib\coffee-script\coffee-script.js" />
+    <Content Include="bundler\node_modules\coffee-script\lib\coffee-script\command.js" />
+    <Content Include="bundler\node_modules\coffee-script\lib\coffee-script\grammar.js" />
+    <Content Include="bundler\node_modules\coffee-script\lib\coffee-script\helpers.js" />
+    <Content Include="bundler\node_modules\coffee-script\lib\coffee-script\index.js" />
+    <Content Include="bundler\node_modules\coffee-script\lib\coffee-script\lexer.js" />
+    <Content Include="bundler\node_modules\coffee-script\lib\coffee-script\nodes.js" />
+    <Content Include="bundler\node_modules\coffee-script\lib\coffee-script\optparse.js" />
+    <Content Include="bundler\node_modules\coffee-script\lib\coffee-script\parser.js" />
+    <Content Include="bundler\node_modules\coffee-script\lib\coffee-script\register.js" />
+    <Content Include="bundler\node_modules\coffee-script\lib\coffee-script\repl.js" />
+    <Content Include="bundler\node_modules\coffee-script\lib\coffee-script\rewriter.js" />
+    <Content Include="bundler\node_modules\coffee-script\lib\coffee-script\scope.js" />
+    <Content Include="bundler\node_modules\coffee-script\lib\coffee-script\sourcemap.js" />
+    <Content Include="bundler\node_modules\debug\browser.js" />
+    <Content Include="bundler\node_modules\debug\debug.js" />
+    <Content Include="bundler\node_modules\debug\node.js" />
+    <Content Include="bundler\node_modules\debug\node_modules\ms\index.js" />
+    <Content Include="bundler\node_modules\less\lib\less\browser.js" />
+    <Content Include="bundler\node_modules\less\lib\less\colors.js" />
+    <Content Include="bundler\node_modules\less\lib\less\encoder.js" />
+    <Content Include="bundler\node_modules\less\lib\less\env.js" />
+    <Content Include="bundler\node_modules\less\lib\less\extend-visitor.js" />
+    <Content Include="bundler\node_modules\less\lib\less\fs.js" />
+    <Content Include="bundler\node_modules\less\lib\less\functions.js" />
+    <Content Include="bundler\node_modules\less\lib\less\import-visitor.js" />
+    <Content Include="bundler\node_modules\less\lib\less\index.js" />
+    <Content Include="bundler\node_modules\less\lib\less\join-selector-visitor.js" />
+    <Content Include="bundler\node_modules\less\lib\less\lessc_helper.js" />
+    <Content Include="bundler\node_modules\less\lib\less\parser.js" />
+    <Content Include="bundler\node_modules\less\lib\less\rhino.js" />
+    <Content Include="bundler\node_modules\less\lib\less\source-map-output.js" />
+    <Content Include="bundler\node_modules\less\lib\less\to-css-visitor.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\alpha.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\anonymous.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\assignment.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\call.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\color.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\comment.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\condition.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\detached-ruleset.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\dimension.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\directive.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\element.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\expression.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\extend.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\import.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\javascript.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\keyword.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\media.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\mixin.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\negative.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\operation.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\paren.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\quoted.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\rule.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\ruleset-call.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\ruleset.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\selector.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\unicode-descriptor.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\url.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\value.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\variable.js" />
+    <Content Include="bundler\node_modules\less\lib\less\visitor.js" />
+    <Content Include="bundler\node_modules\lib\parse-js.js" />
+    <Content Include="bundler\node_modules\lib\process.js" />
+    <Content Include="bundler\node_modules\lib\squeeze-more.js" />
+    <Content Include="bundler\node_modules\LiveScript\lib\ast.js" />
+    <Content Include="bundler\node_modules\LiveScript\lib\browser.js" />
+    <Content Include="bundler\node_modules\LiveScript\lib\command.js" />
+    <Content Include="bundler\node_modules\LiveScript\lib\grammar.js" />
+    <Content Include="bundler\node_modules\LiveScript\lib\index.js" />
+    <Content Include="bundler\node_modules\LiveScript\lib\lang-ls.js" />
+    <Content Include="bundler\node_modules\LiveScript\lib\lexer.js" />
+    <Content Include="bundler\node_modules\LiveScript\lib\livescript.js" />
+    <Content Include="bundler\node_modules\LiveScript\lib\mode-ls.js" />
+    <Content Include="bundler\node_modules\LiveScript\lib\node.js" />
+    <Content Include="bundler\node_modules\LiveScript\lib\optparse.js" />
+    <Content Include="bundler\node_modules\LiveScript\lib\parser.js" />
+    <Content Include="bundler\node_modules\LiveScript\lib\slake.js" />
+    <Content Include="bundler\node_modules\nib\iconic\demo.html" />
+    <Content Include="bundler\node_modules\nib\iconic\iconic.css" />
+    <Content Include="bundler\node_modules\nib\iconic\iconic_stroke.svg" />
+    <Content Include="bundler\node_modules\nib\lib\nib.js" />
+    <Content Include="bundler\node_modules\nib\lib\nodes\color-image.js" />
+    <Content Include="bundler\node_modules\nib\lib\nodes\gradient.js" />
+    <Content Include="bundler\node_modules\nib\lib\nodes\vendor-helpers.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\bm.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\index.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\browserify.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\colors.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\convert\css.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\errors.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\functions\image.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\functions\index.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\functions\resolver.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\functions\url.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\lexer.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\middleware.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\arguments.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\binop.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\block.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\boolean.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\call.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\charset.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\comment.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\each.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\expression.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\extend.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\fontface.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\function.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\group.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\hsla.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\ident.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\if.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\import.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\index.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\jsliteral.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\keyframes.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\literal.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\media.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\mozdocument.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\node.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\null.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\page.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\params.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\property.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\return.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\rgba.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\root.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\selector.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\string.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\ternary.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\unaryop.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\unit.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\parser.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\renderer.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\stack\frame.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\stack\index.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\stack\scope.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\stylus.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\token.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\units.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\utils.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\visitor\compiler.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\visitor\evaluator.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\visitor\index.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\visitor\normalizer.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\cssom\lib\clone.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\cssom\lib\CSSFontFaceRule.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\cssom\lib\CSSImportRule.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\cssom\lib\CSSKeyframeRule.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\cssom\lib\CSSKeyframesRule.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\cssom\lib\CSSMediaRule.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\cssom\lib\CSSRule.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\cssom\lib\CSSStyleDeclaration.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\cssom\lib\CSSStyleRule.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\cssom\lib\CSSStyleSheet.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\cssom\lib\index.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\cssom\lib\MediaList.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\cssom\lib\parse.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\cssom\lib\StyleSheet.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\mkdirp\examples\pow.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\mkdirp\index.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\mkdirp\test\chmod.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\mkdirp\test\clobber.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\mkdirp\test\mkdirp.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\mkdirp\test\perm.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\mkdirp\test\perm_sync.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\mkdirp\test\race.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\mkdirp\test\rel.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\mkdirp\test\return.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\mkdirp\test\return_sync.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\mkdirp\test\root.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\mkdirp\test\sync.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\mkdirp\test\umask.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\mkdirp\test\umask_sync.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\examples\big-not-pretty.xml" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\examples\example.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\examples\get-products.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\examples\hello-world.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\examples\not-pretty.xml" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\examples\pretty-print.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\examples\shopping.xml" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\examples\test.html" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\examples\test.xml" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\lib\sax.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\LICENSE-W3C.html" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\attribute-name.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\attribute-no-space.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\buffer-overrun.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\case.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\cdata-chunked.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\cdata-end-split.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\cdata-fake-end.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\cdata-multiple.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\cdata.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\cyrillic.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\duplicate-attribute.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\end_empty_stream.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\entities.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\entity-mega.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\flush.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\index.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\issue-23.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\issue-30.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\issue-35.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\issue-47.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\issue-49.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\issue-84.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\parser-position.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\script-close-better.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\script.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\self-closing-child-strict.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\self-closing-child.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\self-closing-tag.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\stray-ending.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\trailing-attribute-no-value.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\trailing-non-whitespace.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\unclosed-root.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\unquoted.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\utf8-split.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\xmlns-as-tag-name.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\xmlns-issue-41.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\xmlns-rebinding.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\xmlns-strict.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\xmlns-unbound-element.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\xmlns-unbound.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\xmlns-xml-default-ns.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\xmlns-xml-default-prefix-attribute.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\xmlns-xml-default-prefix.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\xmlns-xml-default-redefine.js" />
+    <Content Include="bundler\node_modules\node-sass\build.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\middleware.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\bin\cmd.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\bin\usage.txt" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\examples\pow.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\index.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\node_modules\minimist\example\parse.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\node_modules\minimist\index.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\node_modules\minimist\test\dash.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\node_modules\minimist\test\default_bool.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\node_modules\minimist\test\dotted.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\node_modules\minimist\test\long.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\node_modules\minimist\test\parse.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\node_modules\minimist\test\parse_modified.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\node_modules\minimist\test\short.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\node_modules\minimist\test\whitespace.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\test\chmod.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\test\clobber.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\test\mkdirp.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\test\opts_fs.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\test\opts_fs_sync.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\test\perm.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\test\perm_sync.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\test\race.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\test\rel.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\test\return.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\test\return_sync.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\test\root.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\test\sync.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\test\umask.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\test\umask_sync.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\object-assign\object-assign.js" />
+    <Content Include="bundler\node_modules\node-sass\sass.js" />
+    <Content Include="bundler\node_modules\step\lib\step.js" />
+    <Content Include="bundler\node_modules\stylus\index.js" />
+    <Content Include="bundler\node_modules\stylus\lib\browserify.js" />
+    <Content Include="bundler\node_modules\stylus\lib\cache\fs.js" />
+    <Content Include="bundler\node_modules\stylus\lib\cache\index.js" />
+    <Content Include="bundler\node_modules\stylus\lib\cache\memory.js" />
+    <Content Include="bundler\node_modules\stylus\lib\cache\null.js" />
+    <Content Include="bundler\node_modules\stylus\lib\colors.js" />
+    <Content Include="bundler\node_modules\stylus\lib\convert\css.js" />
+    <Content Include="bundler\node_modules\stylus\lib\errors.js" />
+    <Content Include="bundler\node_modules\stylus\lib\functions\image.js" />
+    <Content Include="bundler\node_modules\stylus\lib\functions\index.js" />
+    <Content Include="bundler\node_modules\stylus\lib\functions\resolver.js" />
+    <Content Include="bundler\node_modules\stylus\lib\functions\url.js" />
+    <Content Include="bundler\node_modules\stylus\lib\lexer.js" />
+    <Content Include="bundler\node_modules\stylus\lib\middleware.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\arguments.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\atblock.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\atrule.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\binop.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\block.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\boolean.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\call.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\charset.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\comment.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\each.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\expression.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\extend.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\function.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\group.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\hsla.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\ident.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\if.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\import.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\index.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\keyframes.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\literal.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\media.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\member.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\namespace.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\node.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\null.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\object.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\params.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\property.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\query-expression.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\query-list.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\query.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\return.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\rgba.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\root.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\selector.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\string.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\ternary.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\unaryop.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\unit.js" />
+    <Content Include="bundler\node_modules\stylus\lib\parser.js" />
+    <Content Include="bundler\node_modules\stylus\lib\renderer.js" />
+    <Content Include="bundler\node_modules\stylus\lib\stack\frame.js" />
+    <Content Include="bundler\node_modules\stylus\lib\stack\index.js" />
+    <Content Include="bundler\node_modules\stylus\lib\stack\scope.js" />
+    <Content Include="bundler\node_modules\stylus\lib\stylus.js" />
+    <Content Include="bundler\node_modules\stylus\lib\token.js" />
+    <Content Include="bundler\node_modules\stylus\lib\units.js" />
+    <Content Include="bundler\node_modules\stylus\lib\utils.js" />
+    <Content Include="bundler\node_modules\stylus\lib\visitor\compiler.js" />
+    <Content Include="bundler\node_modules\stylus\lib\visitor\deps-resolver.js" />
+    <Content Include="bundler\node_modules\stylus\lib\visitor\evaluator.js" />
+    <Content Include="bundler\node_modules\stylus\lib\visitor\index.js" />
+    <Content Include="bundler\node_modules\stylus\lib\visitor\normalizer.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\css-parse\index.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\examples\g.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\examples\usr-local.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\glob.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\inherits\inherits.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\inherits\inherits_browser.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\inherits\test.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\minimatch.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\node_modules\lru-cache\lib\lru-cache.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\node_modules\lru-cache\test\basic.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\node_modules\lru-cache\test\foreach.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\node_modules\lru-cache\test\memory-leak.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\node_modules\sigmund\bench.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\node_modules\sigmund\sigmund.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\node_modules\sigmund\test\basic.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\test\basic.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\test\brace-expand.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\test\caching.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\test\defaults.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\test\extglob-ending-with-state-char.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\test\00-setup.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\test\bash-comparison.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\test\cwd-test.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\test\globstar-match.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\test\mark.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\test\new-glob-optional-options.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\test\nocase-nomagic.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\test\pause-resume.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\test\readme-issue.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\test\root-nomount.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\test\root.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\test\stat.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\test\zz-cleanup.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\mkdirp\examples\pow.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\mkdirp\index.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\mkdirp\test\chmod.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\mkdirp\test\clobber.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\mkdirp\test\mkdirp.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\mkdirp\test\perm.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\mkdirp\test\perm_sync.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\mkdirp\test\race.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\mkdirp\test\rel.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\mkdirp\test\return.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\mkdirp\test\return_sync.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\mkdirp\test\root.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\mkdirp\test\sync.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\mkdirp\test\umask.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\mkdirp\test\umask_sync.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\examples\big-not-pretty.xml" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\examples\example.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\examples\get-products.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\examples\hello-world.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\examples\not-pretty.xml" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\examples\pretty-print.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\examples\shopping.xml" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\examples\test.html" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\examples\test.xml" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\lib\sax.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\LICENSE-W3C.html" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\attribute-name.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\attribute-no-space.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\buffer-overrun.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\case.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\cdata-chunked.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\cdata-end-split.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\cdata-fake-end.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\cdata-multiple.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\cdata.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\cyrillic.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\duplicate-attribute.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\end_empty_stream.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\entities.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\entity-mega.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\flush.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\index.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\issue-23.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\issue-30.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\issue-35.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\issue-47.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\issue-49.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\issue-84.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\parser-position.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\script-close-better.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\script.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\self-closing-child-strict.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\self-closing-child.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\self-closing-tag.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\stray-ending.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\trailing-attribute-no-value.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\trailing-non-whitespace.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\unclosed-root.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\unquoted.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\utf8-split.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\xmlns-as-tag-name.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\xmlns-issue-41.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\xmlns-rebinding.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\xmlns-strict.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\xmlns-unbound-element.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\xmlns-unbound.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\xmlns-xml-default-ns.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\xmlns-xml-default-prefix-attribute.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\xmlns-xml-default-prefix.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\xmlns-xml-default-redefine.js" />
+    <Content Include="bundler\node_modules\uglify-js.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\demo.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\invoice.css" />
+    <Content Include="Content\kendo\2014.1.528\Black\editor.png" />
+    <Content Include="Content\kendo\2014.1.528\Black\imagebrowser.png" />
+    <Content Include="Content\kendo\2014.1.528\Black\indeterminate.gif" />
+    <Content Include="Content\kendo\2014.1.528\Black\loading-image.gif" />
+    <Content Include="Content\kendo\2014.1.528\Black\loading.gif" />
+    <Content Include="Content\kendo\2014.1.528\Black\loading_2x.gif" />
+    <Content Include="Content\kendo\2014.1.528\Black\markers.png" />
+    <Content Include="Content\kendo\2014.1.528\Black\markers_2x.png" />
+    <Content Include="Content\kendo\2014.1.528\Black\slider-h.gif" />
+    <Content Include="Content\kendo\2014.1.528\Black\slider-v.gif" />
+    <Content Include="Content\kendo\2014.1.528\Black\sprite.png" />
+    <Content Include="Content\kendo\2014.1.528\Black\sprite_2x.png" />
+    <Content Include="Content\kendo\2014.1.528\BlueOpal\editor.png" />
+    <Content Include="Content\kendo\2014.1.528\BlueOpal\imagebrowser.png" />
+    <Content Include="Content\kendo\2014.1.528\BlueOpal\indeterminate.gif" />
+    <Content Include="Content\kendo\2014.1.528\BlueOpal\loading-image.gif" />
+    <Content Include="Content\kendo\2014.1.528\BlueOpal\loading.gif" />
+    <Content Include="Content\kendo\2014.1.528\BlueOpal\loading_2x.gif" />
+    <Content Include="Content\kendo\2014.1.528\BlueOpal\markers.png" />
+    <Content Include="Content\kendo\2014.1.528\BlueOpal\markers_2x.png" />
+    <Content Include="Content\kendo\2014.1.528\BlueOpal\slider-h.gif" />
+    <Content Include="Content\kendo\2014.1.528\BlueOpal\slider-v.gif" />
+    <Content Include="Content\kendo\2014.1.528\BlueOpal\sprite.png" />
+    <Content Include="Content\kendo\2014.1.528\BlueOpal\sprite_2x.png" />
+    <Content Include="Content\kendo\2014.1.528\Bootstrap\editor.png" />
+    <Content Include="Content\kendo\2014.1.528\Bootstrap\imagebrowser.png" />
+    <Content Include="Content\kendo\2014.1.528\Bootstrap\indeterminate.gif" />
+    <Content Include="Content\kendo\2014.1.528\Bootstrap\loading-image.gif" />
+    <Content Include="Content\kendo\2014.1.528\Bootstrap\loading.gif" />
+    <Content Include="Content\kendo\2014.1.528\Bootstrap\loading_2x.gif" />
+    <Content Include="Content\kendo\2014.1.528\Bootstrap\markers.png" />
+    <Content Include="Content\kendo\2014.1.528\Bootstrap\markers_2x.png" />
+    <Content Include="Content\kendo\2014.1.528\Bootstrap\slider-h.gif" />
+    <Content Include="Content\kendo\2014.1.528\Bootstrap\slider-v.gif" />
+    <Content Include="Content\kendo\2014.1.528\Bootstrap\sprite.png" />
+    <Content Include="Content\kendo\2014.1.528\Bootstrap\sprite_2x.png" />
+    <Content Include="Content\kendo\2014.1.528\Default\editor.png" />
+    <Content Include="Content\kendo\2014.1.528\Default\imagebrowser.png" />
+    <Content Include="Content\kendo\2014.1.528\Default\indeterminate.gif" />
+    <Content Include="Content\kendo\2014.1.528\Default\loading-image.gif" />
+    <Content Include="Content\kendo\2014.1.528\Default\loading.gif" />
+    <Content Include="Content\kendo\2014.1.528\Default\loading_2x.gif" />
+    <Content Include="Content\kendo\2014.1.528\Default\markers.png" />
+    <Content Include="Content\kendo\2014.1.528\Default\markers_2x.png" />
+    <Content Include="Content\kendo\2014.1.528\Default\slider-h.gif" />
+    <Content Include="Content\kendo\2014.1.528\Default\slider-v.gif" />
+    <Content Include="Content\kendo\2014.1.528\Default\sprite.png" />
+    <Content Include="Content\kendo\2014.1.528\Default\sprite_2x.png" />
+    <Content Include="Content\kendo\2014.1.528\Flat\editor.png" />
+    <Content Include="Content\kendo\2014.1.528\Flat\imagebrowser.png" />
+    <Content Include="Content\kendo\2014.1.528\Flat\indeterminate.gif" />
+    <Content Include="Content\kendo\2014.1.528\Flat\loading-image.gif" />
+    <Content Include="Content\kendo\2014.1.528\Flat\loading.gif" />
+    <Content Include="Content\kendo\2014.1.528\Flat\loading_2x.gif" />
+    <Content Include="Content\kendo\2014.1.528\Flat\markers.png" />
+    <Content Include="Content\kendo\2014.1.528\Flat\markers_2x.png" />
+    <Content Include="Content\kendo\2014.1.528\Flat\slider-h.gif" />
+    <Content Include="Content\kendo\2014.1.528\Flat\slider-v.gif" />
+    <Content Include="Content\kendo\2014.1.528\Flat\sprite.png" />
+    <Content Include="Content\kendo\2014.1.528\Flat\sprite_2x.png" />
+    <Content Include="Content\kendo\2014.1.528\HighContrast\editor.png" />
+    <Content Include="Content\kendo\2014.1.528\HighContrast\imagebrowser.png" />
+    <Content Include="Content\kendo\2014.1.528\HighContrast\indeterminate.gif" />
+    <Content Include="Content\kendo\2014.1.528\HighContrast\loading-image.gif" />
+    <Content Include="Content\kendo\2014.1.528\HighContrast\loading.gif" />
+    <Content Include="Content\kendo\2014.1.528\HighContrast\loading_2x.gif" />
+    <Content Include="Content\kendo\2014.1.528\HighContrast\markers.png" />
+    <Content Include="Content\kendo\2014.1.528\HighContrast\markers_2x.png" />
+    <Content Include="Content\kendo\2014.1.528\HighContrast\slider-h.gif" />
+    <Content Include="Content\kendo\2014.1.528\HighContrast\slider-v.gif" />
+    <Content Include="Content\kendo\2014.1.528\HighContrast\sprite.png" />
+    <Content Include="Content\kendo\2014.1.528\HighContrast\sprite_2x.png" />
+    <Content Include="Content\kendo\2014.1.528\images\back.png" />
+    <Content Include="Content\kendo\2014.1.528\images\wp8_icons.png" />
+    <Content Include="Content\kendo\2014.1.528\images\wp8_inverseicons.png" />
+    <Content Include="Content\kendo\2014.1.528\kendo.black.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.black.mobile.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.blueopal.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.blueopal.mobile.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.bootstrap.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.bootstrap.mobile.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.common-bootstrap.core.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.common-bootstrap.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.common.core.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.common.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.dataviz.black.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.dataviz.blueopal.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.dataviz.bootstrap.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.dataviz.default.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.dataviz.flat.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.dataviz.highcontrast.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.dataviz.metro.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.dataviz.metroblack.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.dataviz.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.dataviz.mobile.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.dataviz.moonlight.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.dataviz.silver.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.dataviz.uniform.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.default.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.default.mobile.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.flat.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.flat.mobile.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.highcontrast.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.highcontrast.mobile.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.metro.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.metro.mobile.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.metroblack.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.metroblack.mobile.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.mobile.all.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.mobile.android.dark.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.mobile.android.light.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.mobile.blackberry.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.mobile.common.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.mobile.flat.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.mobile.ios.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.mobile.meego.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.mobile.wp8.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.moonlight.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.moonlight.mobile.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.rtl.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.silver.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.silver.mobile.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.uniform.min.css" />
+    <Content Include="Content\kendo\2014.1.528\kendo.uniform.mobile.min.css" />
+    <Content Include="Content\kendo\2014.1.528\MetroBlack\editor.png" />
+    <Content Include="Content\kendo\2014.1.528\MetroBlack\imagebrowser.png" />
+    <Content Include="Content\kendo\2014.1.528\MetroBlack\indeterminate.gif" />
+    <Content Include="Content\kendo\2014.1.528\MetroBlack\loading-image.gif" />
+    <Content Include="Content\kendo\2014.1.528\MetroBlack\loading.gif" />
+    <Content Include="Content\kendo\2014.1.528\MetroBlack\loading_2x.gif" />
+    <Content Include="Content\kendo\2014.1.528\MetroBlack\markers.png" />
+    <Content Include="Content\kendo\2014.1.528\MetroBlack\markers_2x.png" />
+    <Content Include="Content\kendo\2014.1.528\MetroBlack\slider-h.gif" />
+    <Content Include="Content\kendo\2014.1.528\MetroBlack\slider-v.gif" />
+    <Content Include="Content\kendo\2014.1.528\MetroBlack\sprite.png" />
+    <Content Include="Content\kendo\2014.1.528\MetroBlack\sprite_2x.png" />
+    <Content Include="Content\kendo\2014.1.528\Metro\editor.png" />
+    <Content Include="Content\kendo\2014.1.528\Metro\imagebrowser.png" />
+    <Content Include="Content\kendo\2014.1.528\Metro\indeterminate.gif" />
+    <Content Include="Content\kendo\2014.1.528\Metro\loading-image.gif" />
+    <Content Include="Content\kendo\2014.1.528\Metro\loading.gif" />
+    <Content Include="Content\kendo\2014.1.528\Metro\loading_2x.gif" />
+    <Content Include="Content\kendo\2014.1.528\Metro\markers.png" />
+    <Content Include="Content\kendo\2014.1.528\Metro\markers_2x.png" />
+    <Content Include="Content\kendo\2014.1.528\Metro\slider-h.gif" />
+    <Content Include="Content\kendo\2014.1.528\Metro\slider-v.gif" />
+    <Content Include="Content\kendo\2014.1.528\Metro\sprite.png" />
+    <Content Include="Content\kendo\2014.1.528\Metro\sprite_2x.png" />
+    <Content Include="Content\kendo\2014.1.528\Moonlight\editor.png" />
+    <Content Include="Content\kendo\2014.1.528\Moonlight\imagebrowser.png" />
+    <Content Include="Content\kendo\2014.1.528\Moonlight\indeterminate.gif" />
+    <Content Include="Content\kendo\2014.1.528\Moonlight\loading-image.gif" />
+    <Content Include="Content\kendo\2014.1.528\Moonlight\loading.gif" />
+    <Content Include="Content\kendo\2014.1.528\Moonlight\loading_2x.gif" />
+    <Content Include="Content\kendo\2014.1.528\Moonlight\markers.png" />
+    <Content Include="Content\kendo\2014.1.528\Moonlight\markers_2x.png" />
+    <Content Include="Content\kendo\2014.1.528\Moonlight\slider-h.gif" />
+    <Content Include="Content\kendo\2014.1.528\Moonlight\slider-v.gif" />
+    <Content Include="Content\kendo\2014.1.528\Moonlight\sprite.png" />
+    <Content Include="Content\kendo\2014.1.528\Moonlight\sprite_2x.png" />
+    <Content Include="Content\kendo\2014.1.528\Silver\editor.png" />
+    <Content Include="Content\kendo\2014.1.528\Silver\imagebrowser.png" />
+    <Content Include="Content\kendo\2014.1.528\Silver\indeterminate.gif" />
+    <Content Include="Content\kendo\2014.1.528\Silver\loading-image.gif" />
+    <Content Include="Content\kendo\2014.1.528\Silver\loading.gif" />
+    <Content Include="Content\kendo\2014.1.528\Silver\loading_2x.gif" />
+    <Content Include="Content\kendo\2014.1.528\Silver\markers.png" />
+    <Content Include="Content\kendo\2014.1.528\Silver\markers_2x.png" />
+    <Content Include="Content\kendo\2014.1.528\Silver\slider-h.gif" />
+    <Content Include="Content\kendo\2014.1.528\Silver\slider-v.gif" />
+    <Content Include="Content\kendo\2014.1.528\Silver\sprite.png" />
+    <Content Include="Content\kendo\2014.1.528\Silver\sprite_2x.png" />
+    <Content Include="Content\kendo\2014.1.528\textures\brushed-metal.png" />
+    <Content Include="Content\kendo\2014.1.528\textures\dots1.png" />
+    <Content Include="Content\kendo\2014.1.528\textures\dots10.png" />
+    <Content Include="Content\kendo\2014.1.528\textures\dots11.png" />
+    <Content Include="Content\kendo\2014.1.528\textures\dots12.png" />
+    <Content Include="Content\kendo\2014.1.528\textures\dots13.png" />
+    <Content Include="Content\kendo\2014.1.528\textures\dots2.png" />
+    <Content Include="Content\kendo\2014.1.528\textures\dots3.png" />
+    <Content Include="Content\kendo\2014.1.528\textures\dots4.png" />
+    <Content Include="Content\kendo\2014.1.528\textures\dots5.png" />
+    <Content Include="Content\kendo\2014.1.528\textures\dots6.png" />
+    <Content Include="Content\kendo\2014.1.528\textures\dots7.png" />
+    <Content Include="Content\kendo\2014.1.528\textures\dots8.png" />
+    <Content Include="Content\kendo\2014.1.528\textures\dots9.png" />
+    <Content Include="Content\kendo\2014.1.528\textures\glass-lighter.png" />
+    <Content Include="Content\kendo\2014.1.528\textures\glass.png" />
+    <Content Include="Content\kendo\2014.1.528\textures\highlight.png" />
+    <Content Include="Content\kendo\2014.1.528\textures\hsv-gradient.png" />
+    <Content Include="Content\kendo\2014.1.528\textures\hue.png" />
+    <Content Include="Content\kendo\2014.1.528\textures\leather1.png" />
+    <Content Include="Content\kendo\2014.1.528\textures\leather2.png" />
+    <Content Include="Content\kendo\2014.1.528\textures\noise.png" />
+    <Content Include="Content\kendo\2014.1.528\textures\stripe1.png" />
+    <Content Include="Content\kendo\2014.1.528\textures\stripe2.png" />
+    <Content Include="Content\kendo\2014.1.528\textures\stripe3.png" />
+    <Content Include="Content\kendo\2014.1.528\textures\stripe4.png" />
+    <Content Include="Content\kendo\2014.1.528\textures\stripe5.png" />
+    <Content Include="Content\kendo\2014.1.528\textures\stripe6.png" />
+    <Content Include="Content\kendo\2014.1.528\textures\transparency.png" />
+    <Content Include="Content\kendo\2014.1.528\textures\transtexture.png" />
+    <Content Include="Content\kendo\2014.1.528\Uniform\editor.png" />
+    <Content Include="Content\kendo\2014.1.528\Uniform\imagebrowser.png" />
+    <Content Include="Content\kendo\2014.1.528\Uniform\indeterminate.gif" />
+    <Content Include="Content\kendo\2014.1.528\Uniform\loading-image.gif" />
+    <Content Include="Content\kendo\2014.1.528\Uniform\loading.gif" />
+    <Content Include="Content\kendo\2014.1.528\Uniform\loading_2x.gif" />
+    <Content Include="Content\kendo\2014.1.528\Uniform\markers.png" />
+    <Content Include="Content\kendo\2014.1.528\Uniform\markers_2x.png" />
+    <Content Include="Content\kendo\2014.1.528\Uniform\slider-h.gif" />
+    <Content Include="Content\kendo\2014.1.528\Uniform\slider-v.gif" />
+    <Content Include="Content\kendo\2014.1.528\Uniform\sprite.png" />
+    <Content Include="Content\kendo\2014.1.528\Uniform\sprite_2x.png" />
+    <Content Include="Content\lockscreen.css" />
+    <Content Include="Content\smartadmin-supervisor.css" />
+    <Content Include="Content\smartadmin-production.css" />
+    <Content Include="Content\smartadmin-production_unminified.css" />
+    <Content Include="Content\smartadmin-rtl.css" />
+    <Content Include="Content\smartadmin-skins.css" />
+    <Content Include="Content\your_style.css" />
+    <Content Include="Data\EDOBDataModel.Context.tt">
+      <DependentUpon>EDOBDataModel.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EDOBDataModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Data\EDOBDataModel.edmx.diagram">
+      <DependentUpon>EDOBDataModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Data\EDOBDataModel.tt">
+      <DependentUpon>EDOBDataModel.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EDOBDataModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="img\ajax-loader.gif" />
+    <Content Include="img\alpha.png" />
+    <Content Include="img\avatars\1.png" />
+    <Content Include="img\avatars\2.png" />
+    <Content Include="img\avatars\3.png" />
+    <Content Include="img\avatars\4.png" />
+    <Content Include="img\avatars\5.png" />
+    <Content Include="img\avatars\copyright.txt" />
+    <Content Include="img\avatars\female.png" />
+    <Content Include="img\avatars\male.png" />
+    <Content Include="img\avatars\sunny-big.png" />
+    <Content Include="img\avatars\sunny.png" />
+    <Content Include="img\clear.png" />
+    <Content Include="img\demo\64x64.png" />
+    <Content Include="img\demo\basic.png" />
+    <Content Include="img\demo\copyright.txt" />
+    <Content Include="img\demo\demo-smartbig-alert.png" />
+    <Content Include="img\demo\demo-smartmedium-alert.png" />
+    <Content Include="img\demo\demo-smartsmall-alert.png" />
+    <Content Include="img\demo\hero.png" />
+    <Content Include="img\demo\image-placeholder-64x64.png" />
+    <Content Include="img\demo\iphoneview.png" />
+    <Content Include="img\demo\m1.jpg" />
+    <Content Include="img\demo\m2.jpg" />
+    <Content Include="img\demo\m3.jpg" />
+    <Content Include="img\demo\newsletter.png" />
+    <Content Include="img\demo\responseimg.png" />
+    <Content Include="img\demo\s1.jpg" />
+    <Content Include="img\demo\s2.jpg" />
+    <Content Include="img\demo\s3.jpg" />
+    <Content Include="img\demo\sa-demo.png" />
+    <Content Include="img\demo\sample.jpg" />
+    <Content Include="img\demo\sidebar.png" />
+    <Content Include="img\demo\sidebarhero.png" />
+    <Content Include="img\demo\site-1.jpg" />
+    <Content Include="img\demo\site-2.jpg" />
+    <Content Include="img\demo\widget-colorpicker.png" />
+    <Content Include="img\dropzone\spritemap%402x.png" />
+    <Content Include="img\dropzone\spritemap.png" />
+    <Content Include="img\favicon\favicon.ico" />
+    <Content Include="img\flags\de.png" />
+    <Content Include="img\flags\es.png" />
+    <Content Include="img\flags\us.png" />
+    <Content Include="img\gradient\login.png" />
+    <Content Include="img\hue.png" />
+    <Content Include="img\invoice\americanexpress.png" />
+    <Content Include="img\invoice\license.txt" />
+    <Content Include="img\invoice\mastercard.png" />
+    <Content Include="img\invoice\paypal.png" />
+    <Content Include="img\invoice\visa.png" />
+    <Content Include="img\jqueryui\ui-bg_flat_0_999999_40x100.png" />
+    <Content Include="img\jqueryui\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="img\jqueryui\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="img\jqueryui\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="img\jqueryui\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="img\jqueryui\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="img\jqueryui\ui-bg_glass_75_ffffff_1x400.png" />
+    <Content Include="img\jqueryui\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="img\jqueryui\ui-bg_inset-soft_95_fef1ec_1x100.png" />
+    <Content Include="img\jqueryui\ui-icons_222222_256x240.png" />
+    <Content Include="img\jqueryui\ui-icons_2e83ff_256x240.png" />
+    <Content Include="img\jqueryui\ui-icons_428bca_256x240.png" />
+    <Content Include="img\jqueryui\ui-icons_454545_256x240.png" />
+    <Content Include="img\jqueryui\ui-icons_555555_256x240.png" />
+    <Content Include="img\jqueryui\ui-icons_888888_256x240.png" />
+    <Content Include="img\jqueryui\ui-icons_999999_256x240.png" />
+    <Content Include="img\jqueryui\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="img\jqueryui\ui-icons_f0ad4e_256x240.png" />
+    <Content Include="img\jqueryui\ui-icons_f6cf3b_256x240.png" />
+    <Content Include="img\jqueryui\ui-icons_ffffff_256x240.png" />
+    <Content Include="img\loading.gif" />
+    <Content Include="img\logo-blacknwhite.png" />
+    <Content Include="img\logo-blue.png" />
+    <Content Include="img\logo-o.png" />
+    <Content Include="img\logo-pale.png" />
+    <Content Include="img\logo-white.png" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\mappin-default.png" />
+    <Content Include="img\mybg.png" />
+    <Content Include="img\pattern\divider.jpg" />
+    <Content Include="img\pattern\graphy-xs.png" />
+    <Content Include="img\pattern\graphy.png" />
+    <Content Include="img\pattern\license-info.txt" />
+    <Content Include="img\pattern\lightpaperfibers.png" />
+    <Content Include="img\pattern\movable.png" />
+    <Content Include="img\pattern\nistri-xs.png" />
+    <Content Include="img\pattern\nistri.png" />
+    <Content Include="img\pattern\overlay-pattern.png" />
+    <Content Include="img\pattern\paper-xs.png" />
+    <Content Include="img\pattern\paper.png" />
+    <Content Include="img\pattern\pattern.png" />
+    <Content Include="img\pattern\sneaker_mesh_fabric-xs.png" />
+    <Content Include="img\pattern\sneaker_mesh_fabric.png" />
+    <Content Include="img\pattern\tileable_wood_texture-xs.png" />
+    <Content Include="img\pattern\tileable_wood_texture.png" />
+    <Content Include="img\ribbon.png" />
+    <Content Include="img\saturation.png" />
+    <Content Include="img\select2-spinner.gif" />
+    <Content Include="img\sort_asc.png" />
+    <Content Include="img\sort_asc_disabled.png" />
+    <Content Include="img\sort_both.png" />
+    <Content Include="img\sort_desc.png" />
+    <Content Include="img\sort_desc_disabled.png" />
+    <Content Include="img\splash\ipad-landscape.png" />
+    <Content Include="img\splash\ipad-portrait.png" />
+    <Content Include="img\splash\iphone.png" />
+    <Content Include="img\splash\sptouch-icon-iphone.png" />
+    <Content Include="img\splash\touch-icon-ipad-retina.png" />
+    <Content Include="img\splash\touch-icon-ipad.png" />
+    <Content Include="img\splash\touch-icon-iphone-retina.png" />
+    <Content Include="img\superbox\superbox-full-1.jpg" />
+    <Content Include="img\superbox\superbox-full-10.jpg" />
+    <Content Include="img\superbox\superbox-full-11.jpg" />
+    <Content Include="img\superbox\superbox-full-12.jpg" />
+    <Content Include="img\superbox\superbox-full-13.jpg" />
+    <Content Include="img\superbox\superbox-full-14.jpg" />
+    <Content Include="img\superbox\superbox-full-15.jpg" />
+    <Content Include="img\superbox\superbox-full-16.jpg" />
+    <Content Include="img\superbox\superbox-full-17.jpg" />
+    <Content Include="img\superbox\superbox-full-18.jpg" />
+    <Content Include="img\superbox\superbox-full-19.jpg" />
+    <Content Include="img\superbox\superbox-full-2.jpg" />
+    <Content Include="img\superbox\superbox-full-20.jpg" />
+    <Content Include="img\superbox\superbox-full-21.jpg" />
+    <Content Include="img\superbox\superbox-full-22.jpg" />
+    <Content Include="img\superbox\superbox-full-23.jpg" />
+    <Content Include="img\superbox\superbox-full-24.jpg" />
+    <Content Include="img\superbox\superbox-full-3.jpg" />
+    <Content Include="img\superbox\superbox-full-4.jpg" />
+    <Content Include="img\superbox\superbox-full-5.jpg" />
+    <Content Include="img\superbox\superbox-full-6.jpg" />
+    <Content Include="img\superbox\superbox-full-7.jpg" />
+    <Content Include="img\superbox\superbox-full-8.jpg" />
+    <Content Include="img\superbox\superbox-full-9.jpg" />
+    <Content Include="img\superbox\superbox-thumb-1.jpg" />
+    <Content Include="img\superbox\superbox-thumb-10.jpg" />
+    <Content Include="img\superbox\superbox-thumb-11.jpg" />
+    <Content Include="img\superbox\superbox-thumb-12.jpg" />
+    <Content Include="img\superbox\superbox-thumb-13.jpg" />
+    <Content Include="img\superbox\superbox-thumb-14.jpg" />
+    <Content Include="img\superbox\superbox-thumb-15.jpg" />
+    <Content Include="img\superbox\superbox-thumb-16.jpg" />
+    <Content Include="img\superbox\superbox-thumb-17.jpg" />
+    <Content Include="img\superbox\superbox-thumb-18.jpg" />
+    <Content Include="img\superbox\superbox-thumb-19.jpg" />
+    <Content Include="img\superbox\superbox-thumb-2.jpg" />
+    <Content Include="img\superbox\superbox-thumb-20.jpg" />
+    <Content Include="img\superbox\superbox-thumb-21.jpg" />
+    <Content Include="img\superbox\superbox-thumb-22.jpg" />
+    <Content Include="img\superbox\superbox-thumb-23.jpg" />
+    <Content Include="img\superbox\superbox-thumb-24.jpg" />
+    <Content Include="img\superbox\superbox-thumb-3.jpg" />
+    <Content Include="img\superbox\superbox-thumb-4.jpg" />
+    <Content Include="img\superbox\superbox-thumb-5.jpg" />
+    <Content Include="img\superbox\superbox-thumb-6.jpg" />
+    <Content Include="img\superbox\superbox-thumb-7.jpg" />
+    <Content Include="img\superbox\superbox-thumb-8.jpg" />
+    <Content Include="img\superbox\superbox-thumb-9.jpg" />
+    <Content Include="img\user.gif" />
+    <Content Include="LicenseKey.xml" />
+    <Content Include="README.txt" />
+    <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap\bootstrap.js" />
+    <Content Include="Scripts\bootstrap\bootstrap.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.af-ZA.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.af.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.am-ET.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.am.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ar-AE.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ar-BH.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ar-DZ.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ar-EG.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ar-IQ.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ar-JO.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ar-KW.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ar-LB.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ar-LY.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ar-MA.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ar-OM.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ar-QA.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ar-SA.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ar-SY.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ar-TN.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ar-YE.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ar.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.arn-CL.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.arn.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.as-IN.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.as.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.az-Cyrl-AZ.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.az-Cyrl.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.az-Latn-AZ.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.az-Latn.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.az.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ba-RU.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ba.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.be-BY.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.be.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.bg-BG.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.bg.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.bn-BD.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.bn-IN.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.bn.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.bo-CN.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.bo.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.br-FR.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.br.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.bs-Cyrl-BA.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.bs-Cyrl.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.bs-Latn-BA.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.bs-Latn.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.bs.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ca-ES.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ca.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.co-FR.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.co.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.cs-CZ.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.cs.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.cy-GB.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.cy.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.da-DK.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.da.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.de-AT.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.de-CH.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.de-DE.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.de-LI.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.de-LU.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.de.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.dsb-DE.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.dsb.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.dv-MV.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.dv.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.el-GR.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.el.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.en-029.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.en-AU.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.en-BZ.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.en-CA.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.en-GB.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.en-IE.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.en-IN.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.en-JM.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.en-MY.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.en-NZ.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.en-PH.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.en-SG.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.en-TT.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.en-US.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.en-ZA.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.en-ZW.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.en.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.es-AR.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.es-BO.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.es-CL.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.es-CO.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.es-CR.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.es-DO.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.es-EC.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.es-ES.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.es-GT.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.es-HN.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.es-MX.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.es-NI.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.es-PA.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.es-PE.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.es-PR.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.es-PY.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.es-SV.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.es-US.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.es-UY.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.es-VE.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.es.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.et-EE.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.et.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.eu-ES.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.eu.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.fa-IR.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.fa.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.fi-FI.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.fi.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.fil-PH.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.fil.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.fo-FO.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.fo.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.fr-BE.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.fr-CA.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.fr-CH.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.fr-FR.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.fr-LU.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.fr-MC.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.fr.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.fy-NL.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.fy.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ga-IE.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ga.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.gd-GB.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.gd.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.gl-ES.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.gl.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.gsw-FR.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.gsw.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.gu-IN.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.gu.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ha-Latn-NG.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ha-Latn.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ha.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.he-IL.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.he.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.hi-IN.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.hi.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.hr-BA.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.hr-HR.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.hr.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.hsb-DE.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.hsb.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.hu-HU.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.hu.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.hy-AM.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.hy.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.id-ID.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.id.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ig-NG.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ig.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ii-CN.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ii.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.is-IS.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.is.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.it-CH.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.it-IT.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.it.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.iu-Cans-CA.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.iu-Cans.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.iu-Latn-CA.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.iu-Latn.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.iu.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ja-JP.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ja.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ka-GE.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ka.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.kk-KZ.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.kk.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.kl-GL.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.kl.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.km-KH.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.km.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.kn-IN.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.kn.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ko-KR.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ko.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.kok-IN.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.kok.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ky-KG.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ky.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.lb-LU.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.lb.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.lo-LA.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.lo.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.lt-LT.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.lt.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.lv-LV.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.lv.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.mi-NZ.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.mi.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.mk-MK.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.mk.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ml-IN.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ml.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.mn-Cyrl.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.mn-MN.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.mn-Mong-CN.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.mn-Mong.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.mn.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.moh-CA.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.moh.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.mr-IN.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.mr.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ms-BN.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ms-MY.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ms.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.mt-MT.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.mt.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.nb-NO.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.nb.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ne-NP.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ne.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.nl-BE.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.nl-NL.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.nl.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.nn-NO.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.nn.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.no.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.nso-ZA.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.nso.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.oc-FR.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.oc.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.or-IN.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.or.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.pa-IN.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.pa.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.pl-PL.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.pl.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.prs-AF.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.prs.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ps-AF.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ps.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.pt-BR.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.pt-PT.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.pt.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.qut-GT.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.qut.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.quz-BO.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.quz-EC.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.quz-PE.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.quz.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.rm-CH.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.rm.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ro-RO.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ro.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ru-RU.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ru-UA.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ru.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.rw-RW.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.rw.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.sa-IN.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.sa.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.sah-RU.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.sah.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.se-FI.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.se-NO.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.se-SE.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.se.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.si-LK.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.si.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.sk-SK.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.sk.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.sl-SI.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.sl.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.sma-NO.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.sma-SE.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.sma.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.smj-NO.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.smj-SE.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.smj.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.smn-FI.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.smn.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.sms-FI.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.sms.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.sq-AL.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.sq.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.sr-Cyrl-BA.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.sr-Cyrl-CS.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.sr-Cyrl-ME.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.sr-Cyrl-RS.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.sr-Cyrl.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.sr-Latn-BA.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.sr-Latn-CS.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.sr-Latn-ME.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.sr-Latn-RS.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.sr-Latn.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.sr.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.sv-FI.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.sv-SE.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.sv.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.sw-KE.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.sw.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.syr-SY.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.syr.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ta-IN.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ta.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.te-IN.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.te.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.tg-Cyrl-TJ.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.tg-Cyrl.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.tg.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.th-TH.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.th.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.tk-TM.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.tk.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.tn-ZA.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.tn.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.tr-TR.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.tr.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.tt-RU.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.tt.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.tzm-Latn-DZ.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.tzm-Latn.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.tzm.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ug-CN.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ug.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.uk-UA.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.uk.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ur-PK.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.ur.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.uz-Cyrl-UZ.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.uz-Cyrl.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.uz-Latn-UZ.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.uz-Latn.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.uz.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.vi-VN.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.vi.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.wo-SN.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.wo.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.xh-ZA.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.xh.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.yo-NG.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.yo.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.zh-CHS.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.zh-CHT.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.zh-CN.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.zh-Hans.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.zh-Hant.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.zh-HK.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.zh-MO.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.zh-SG.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.zh-TW.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.zh.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.zu-ZA.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.zu.min.js" />
+    <Content Include="Scripts\demo.js" />
+    <Content Include="img\flags\flags.zip" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="Scripts\edob.js" />
+    <Content Include="bundler\node_modules\stylus\Readme.md" />
+    <Content Include="bundler\node_modules\stylus\package.json" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\package.json" />
+    <Content Include="bundler\node_modules\stylus\node_modules\mkdirp\package.json" />
+    <Content Include="bundler\node_modules\stylus\LICENSE" />
+    <Content Include="bundler\node_modules\stylus\lib\functions\index.styl" />
+    <Content Include="bundler\node_modules\stylus\bin\stylus" />
+    <Content Include="bundler\node_modules\nib\Readme.md" />
+    <Content Include="bundler\node_modules\nib\package.json" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\Readme.md" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\package.json" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\package.json" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\mkdirp\package.json" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\cssom\package.json" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\bin\stylus" />
+    <Content Include="bundler\node_modules\nib\lib\nib\positions.styl" />
+    <Content Include="bundler\node_modules\nib\lib\nib\gradients.styl" />
+    <Content Include="bundler\node_modules\nib\lib\nib\flex.styl" />
+    <Content Include="bundler\node_modules\less\package.json" />
+    <Content Include="bundler\node_modules\less\bin\lessc" />
+    <Content Include="bundler\node_modules\debug\Readme.md" />
+    <Content Include="bundler\node_modules\debug\package.json" />
+    <Content Include="bundler\node_modules\coffee-script\package.json" />
+    <Content Include="bundler\node_modules\clean-css\bin\cleancss" />
+    <Content Include="Content\kendo\2014.1.528\images\kendoui.ttf" />
+    <Content Include="Content\kendo\2014.1.528\images\kendoui.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="bundler\uglifyjs" />
+    <Content Include="bundler\package.json" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\README.md" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\LICENSE" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\examples\strict.dtd" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\component.json" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\AUTHORS" />
+    <Content Include="bundler\node_modules\stylus\node_modules\mkdirp\readme.markdown" />
+    <Content Include="bundler\node_modules\stylus\node_modules\mkdirp\LICENSE" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\test\bash-results.json" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\README.md" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\package.json" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\README.md" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\package.json" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\node_modules\sigmund\README.md" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\node_modules\sigmund\package.json" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\node_modules\sigmund\LICENSE" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\node_modules\lru-cache\README.md" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\node_modules\lru-cache\package.json" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\node_modules\lru-cache\LICENSE" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\node_modules\lru-cache\CONTRIBUTORS" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\LICENSE" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\inherits\README.md" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\inherits\package.json" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\inherits\LICENSE" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\LICENSE" />
+    <Content Include="bundler\node_modules\stylus\node_modules\css-parse\Readme.md" />
+    <Content Include="bundler\node_modules\stylus\node_modules\css-parse\package.json" />
+    <Content Include="bundler\node_modules\step\package.json" />
+    <Content Include="bundler\node_modules\node-sass\README.md" />
+    <Content Include="bundler\node_modules\node-sass\package.json" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\object-assign\readme.md" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\object-assign\package.json" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\README.md" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\package.json" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\readme.markdown" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\package.json" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\node_modules\minimist\readme.markdown" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\node_modules\minimist\package.json" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\node_modules\minimist\LICENSE" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\LICENSE" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\LICENSE" />
+    <Content Include="bundler\node_modules\node-sass\CONTRIBUTING.md" />
+    <Content Include="bundler\node_modules\node-sass\bin\win32-x64-v8-3.14\binding.node" />
+    <Content Include="bundler\node_modules\node-sass\bin\win32-ia32-v8-3.14\binding.node" />
+    <Content Include="bundler\node_modules\node-sass\bin\node-sass" />
+    <Content Include="bundler\node_modules\node-sass\bin\darwin-x64-v8-3.14\binding.node" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\README.md" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\LICENSE" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\examples\strict.dtd" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\component.json" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\AUTHORS" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\mkdirp\readme.markdown" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\mkdirp\LICENSE" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\cssom\README.mdown" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\LICENSE" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\functions\index.styl" />
+    <Content Include="bundler\node_modules\nib\LICENSE" />
+    <Content Include="bundler\node_modules\nib\lib\nib\vendor.styl" />
+    <Content Include="bundler\node_modules\nib\lib\nib\text\replace-text.styl" />
+    <Content Include="bundler\node_modules\nib\lib\nib\text\index.styl" />
+    <Content Include="bundler\node_modules\nib\lib\nib\text\hide-text.styl" />
+    <Content Include="bundler\node_modules\nib\lib\nib\text\ellipsis.styl" />
+    <Content Include="bundler\node_modules\nib\lib\nib\text\aliases.styl" />
+    <Content Include="bundler\node_modules\nib\lib\nib\size.styl" />
+    <Content Include="bundler\node_modules\nib\lib\nib\reset.styl" />
+    <Content Include="bundler\node_modules\nib\lib\nib\overflow.styl" />
+    <Content Include="bundler\node_modules\nib\lib\nib\index.styl" />
+    <Content Include="bundler\node_modules\nib\lib\nib\image.styl" />
+    <Content Include="bundler\node_modules\nib\lib\nib\iconic.styl" />
+    <Content Include="bundler\node_modules\nib\lib\nib\config.styl" />
+    <Content Include="bundler\node_modules\nib\lib\nib\color-image.styl" />
+    <Content Include="bundler\node_modules\nib\lib\nib\clearfix.styl" />
+    <Content Include="bundler\node_modules\nib\lib\nib\border.styl" />
+    <Content Include="bundler\node_modules\nib\index.styl" />
+    <Content Include="bundler\node_modules\nib\iconic\iconic_stroke.ttf" />
+    <Content Include="bundler\node_modules\nib\iconic\iconic_stroke.otf" />
+    <Content Include="bundler\node_modules\nib\iconic\iconic_stroke.eot" />
+    <Content Include="bundler\node_modules\LiveScript\package.json" />
+    <Content Include="bundler\node_modules\LiveScript\bin\slake" />
+    <Content Include="bundler\node_modules\LiveScript\bin\lsc" />
+    <Content Include="bundler\node_modules\LiveScript\bin\livescript" />
+    <Content Include="bundler\node_modules\debug\node_modules\ms\README.md" />
+    <Content Include="bundler\node_modules\debug\node_modules\ms\package.json" />
+    <Content Include="bundler\node_modules\debug\Makefile" />
+    <Content Include="bundler\node_modules\debug\History.md" />
+    <Content Include="bundler\node_modules\debug\component.json" />
+    <Content Include="bundler\node_modules\coffee-script\bin\coffee" />
+    <Content Include="bundler\node_modules\coffee-script\bin\cake" />
+    <Content Include="bundler\LICENSE" />
+    <Content Include="bundler\coffee.cmd" />
+    <Content Include="bundler\bundler.cmd" />
+    <None Include="Properties\PublishProfiles\EDOB.pubxml" />
+    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.1.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.1.min.js" />
+    <Content Include="Scripts\kendo.modernizr.custom.js" />
+    <Content Include="Scripts\kendo\2014.1.528\jquery.min.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.all.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.aspnetmvc.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.autocomplete.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.binder.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.button.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.calendar.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.colorpicker.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.columnmenu.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.combobox.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.core.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.data.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.data.odata.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.data.signalr.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.data.xml.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.dataviz.barcode.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.dataviz.canvas.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.dataviz.chart.funnel.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.dataviz.chart.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.dataviz.chart.polar.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.dataviz.core.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.dataviz.diagram.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.dataviz.gauge.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.dataviz.map.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.dataviz.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.dataviz.mobile.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.dataviz.qrcode.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.dataviz.sparkline.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.dataviz.stock.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.dataviz.svg.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.dataviz.themes.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.dataviz.vml.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.datepicker.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.datetimepicker.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.draganddrop.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.dropdownlist.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.editable.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.editor.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.filtermenu.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.fx.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.grid.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.groupable.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.imagebrowser.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.list.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.listview.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.maskedtextbox.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.menu.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.actionsheet.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.application.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.button.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.buttongroup.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.drawer.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.listview.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.loader.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.modalview.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.navbar.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.pane.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.popover.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.scroller.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.scrollview.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.shim.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.splitview.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.switch.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.tabstrip.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.view.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.multiselect.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.notification.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.numerictextbox.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.pager.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.panelbar.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.popup.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.progressbar.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.reorderable.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.resizable.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.router.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.scheduler.agendaview.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.scheduler.dayview.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.scheduler.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.scheduler.monthview.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.scheduler.recurrence.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.scheduler.view.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.selectable.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.slider.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.sortable.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.splitter.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.tabstrip.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.timepicker.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.tooltip.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.touch.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.treeview.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.upload.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.userevents.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.validator.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.view.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.web.min.js.map" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.window.min.js.map" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <None Include="Scripts\libs\jquery-2.1.0.intellisense.js" />
+    <Content Include="Scripts\kendo\2014.1.528\jquery.min.js" />
+    <None Include="Scripts\kendo\2014.1.528\kendo.all-vsdoc.js" />
+    <None Include="Scripts\kendo\2014.1.528\kendo.all.min.intellisense.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.all.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.aspnetmvc.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.autocomplete.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.binder.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.button.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.calendar.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.colorpicker.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.columnmenu.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.combobox.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.core.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.data.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.data.odata.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.data.signalr.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.data.xml.min.js" />
+    <None Include="Scripts\kendo\2014.1.528\kendo.dataviz-vsdoc.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.dataviz.barcode.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.dataviz.canvas.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.dataviz.chart.funnel.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.dataviz.chart.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.dataviz.chart.polar.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.dataviz.core.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.dataviz.diagram.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.dataviz.gauge.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.dataviz.map.min.js" />
+    <None Include="Scripts\kendo\2014.1.528\kendo.dataviz.min.intellisense.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.dataviz.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.dataviz.mobile.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.dataviz.qrcode.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.dataviz.sparkline.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.dataviz.stock.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.dataviz.svg.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.dataviz.themes.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.dataviz.vml.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.datepicker.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.datetimepicker.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.draganddrop.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.dropdownlist.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.editable.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.editor.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.filtermenu.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.fx.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.grid.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.groupable.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.imagebrowser.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.list.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.listview.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.maskedtextbox.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.menu.min.js" />
+    <None Include="Scripts\kendo\2014.1.528\kendo.mobile-vsdoc.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.actionsheet.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.application.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.button.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.buttongroup.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.drawer.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.listview.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.loader.min.js" />
+    <None Include="Scripts\kendo\2014.1.528\kendo.mobile.min.intellisense.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.modalview.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.navbar.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.pane.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.popover.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.scroller.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.scrollview.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.shim.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.splitview.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.switch.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.tabstrip.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.mobile.view.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.multiselect.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.notification.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.numerictextbox.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.pager.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.panelbar.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.popup.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.progressbar.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.reorderable.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.resizable.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.router.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.scheduler.agendaview.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.scheduler.dayview.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.scheduler.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.scheduler.monthview.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.scheduler.recurrence.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.scheduler.view.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.selectable.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.slider.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.sortable.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.splitter.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.tabstrip.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.timepicker.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.timezones.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.tooltip.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.touch.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.treeview.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.upload.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.userevents.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.validator.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.view.min.js" />
+    <None Include="Scripts\kendo\2014.1.528\kendo.web-vsdoc.js" />
+    <None Include="Scripts\kendo\2014.1.528\kendo.web.min.intellisense.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.web.min.js" />
+    <Content Include="Scripts\kendo\2014.1.528\kendo.window.min.js" />
+    <Content Include="Scripts\libs\jquery-2.1.0.js" />
+    <Content Include="Scripts\libs\jquery-2.1.0.min.js" />
+    <Content Include="Scripts\libs\jquery-ui-1.10.3.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\notification\SmartNotification.js" />
+    <Content Include="Scripts\notification\SmartNotification.min.js" />
+    <Content Include="Scripts\plugin\bootstrap-progressbar\bootstrap-progressbar.js" />
+    <Content Include="Scripts\plugin\bootstrap-slider\bootstrap-slider.js" />
+    <Content Include="Scripts\plugin\bootstrap-slider\bootstrap-slider.min.js" />
+    <Content Include="Scripts\plugin\bootstrap-tags\bootstrap-tagsinput-angular.js" />
+    <Content Include="Scripts\plugin\bootstrap-tags\bootstrap-tagsinput.js" />
+    <Content Include="Scripts\plugin\bootstrap-tags\bootstrap-tagsinput.min.js" />
+    <Content Include="Scripts\plugin\bootstrap-timepicker\bootstrap-timepicker.js" />
+    <Content Include="Scripts\plugin\bootstrap-timepicker\bootstrap-timepicker.min.js" />
+    <Content Include="Scripts\plugin\bootstrap-wizard\jquery.bootstrap.wizard.js" />
+    <Content Include="Scripts\plugin\bootstrap-wizard\jquery.bootstrap.wizard.min.js" />
+    <Content Include="Scripts\plugin\bootstraptree\bootstrap-tree.js" />
+    <Content Include="Scripts\plugin\ckeditor\adapters\jquery.js" />
+    <Content Include="Scripts\plugin\ckeditor\build-config.js" />
+    <Content Include="Scripts\plugin\ckeditor\ckeditor.js" />
+    <Content Include="Scripts\plugin\ckeditor\config.js" />
+    <Content Include="Scripts\plugin\ckeditor\contents.css" />
+    <Content Include="Scripts\plugin\ckeditor\lang\af.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\ar.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\bg.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\bn.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\bs.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\ca.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\cs.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\cy.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\da.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\de.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\el.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\en-au.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\en-ca.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\en-gb.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\en.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\eo.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\es.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\et.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\eu.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\fa.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\fi.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\fo.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\fr-ca.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\fr.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\gl.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\gu.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\he.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\hi.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\hr.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\hu.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\id.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\is.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\it.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\ja.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\ka.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\km.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\ko.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\ku.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\lt.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\lv.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\mk.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\mn.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\ms.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\nb.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\nl.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\no.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\pl.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\pt-br.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\pt.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\ro.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\ru.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\si.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\sk.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\sl.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\sq.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\sr-latn.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\sr.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\sv.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\th.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\tr.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\ug.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\uk.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\vi.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\zh-cn.js" />
+    <Content Include="Scripts\plugin\ckeditor\lang\zh.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\da.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\de.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\es.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\et.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\fr-ca.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\gl.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\he.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\id.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\it.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\km.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\ko.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\no.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\si.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\sq.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\sr-latn.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\sr.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\th.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\colordialog\dialogs\colordialog.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\div\dialogs\div.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\fakeobjects\images\spacer.gif" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\find\dialogs\find.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\flash\dialogs\flash.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\flash\images\placeholder.png" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\forms\dialogs\button.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\forms\dialogs\checkbox.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\forms\dialogs\form.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\forms\dialogs\hiddenfield.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\forms\dialogs\radio.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\forms\dialogs\select.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\forms\dialogs\textarea.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\forms\dialogs\textfield.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\forms\images\hiddenfield.gif" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\icons.png" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\icons_hidpi.png" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\iframe\dialogs\iframe.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\iframe\images\placeholder.png" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\image\images\noimage.png" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\link\images\anchor.png" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\link\images\hidpi\anchor.png" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\liststyle\dialogs\liststyle.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\magicline\images\hidpi\icon.png" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\magicline\images\icon.png" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\pagebreak\images\pagebreak.gif" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\preview\preview.html" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\showblocks\images\block_address.png" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\showblocks\images\block_blockquote.png" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\showblocks\images\block_div.png" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\showblocks\images\block_h1.png" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\showblocks\images\block_h2.png" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\showblocks\images\block_h3.png" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\showblocks\images\block_h4.png" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\showblocks\images\block_h5.png" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\showblocks\images\block_h6.png" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\showblocks\images\block_p.png" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\showblocks\images\block_pre.png" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\smiley\dialogs\smiley.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\smiley\images\angel_smile.gif" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\smiley\images\angry_smile.gif" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\smiley\images\broken_heart.gif" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\smiley\images\confused_smile.gif" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\smiley\images\cry_smile.gif" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\smiley\images\devil_smile.gif" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\smiley\images\embaressed_smile.gif" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\smiley\images\embarrassed_smile.gif" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\smiley\images\envelope.gif" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\smiley\images\heart.gif" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\smiley\images\kiss.gif" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\smiley\images\lightbulb.gif" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\smiley\images\omg_smile.gif" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\smiley\images\regular_smile.gif" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\smiley\images\sad_smile.gif" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\smiley\images\shades_smile.gif" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\smiley\images\teeth_smile.gif" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\smiley\images\thumbs_down.gif" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\smiley\images\thumbs_up.gif" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\smiley\images\tongue_smile.gif" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\smiley\images\tounge_smile.gif" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\smiley\images\whatchutalkingabout_smile.gif" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\smiley\images\wink_smile.gif" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\ar.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\bg.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\ca.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\cs.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\cy.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\de.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\el.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\eo.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\es.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\et.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\fa.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\fi.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\fr-ca.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\fr.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\gl.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\he.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\hr.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\hu.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\id.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\it.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\ja.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\ku.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\lv.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\nb.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\nl.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\no.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\pl.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\pt.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\ru.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\si.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\sk.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\sl.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\sq.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\sv.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\th.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\tr.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\ug.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\uk.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\vi.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\templates\dialogs\templates.css" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\templates\dialogs\templates.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\templates\templates\default.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\templates\templates\images\template1.gif" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\templates\templates\images\template2.gif" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\templates\templates\images\template3.gif" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\wsc\dialogs\tmp.html" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\wsc\dialogs\wsc_ie.js" />
+    <Content Include="Scripts\plugin\ckeditor\samples\ajax.html" />
+    <Content Include="Scripts\plugin\ckeditor\samples\api.html" />
+    <Content Include="Scripts\plugin\ckeditor\samples\appendto.html" />
+    <Content Include="Scripts\plugin\ckeditor\samples\assets\inlineall\logo.png" />
+    <Content Include="Scripts\plugin\ckeditor\samples\assets\outputxhtml\outputxhtml.css" />
+    <Content Include="Scripts\plugin\ckeditor\samples\assets\posteddata.php" />
+    <Content Include="Scripts\plugin\ckeditor\samples\assets\sample.css" />
+    <Content Include="Scripts\plugin\ckeditor\samples\assets\sample.jpg" />
+    <Content Include="Scripts\plugin\ckeditor\samples\assets\uilanguages\languages.js" />
+    <Content Include="Scripts\plugin\ckeditor\samples\datafiltering.html" />
+    <Content Include="Scripts\plugin\ckeditor\samples\divreplace.html" />
+    <Content Include="Scripts\plugin\ckeditor\samples\index.html" />
+    <Content Include="Scripts\plugin\ckeditor\samples\inlineall.html" />
+    <Content Include="Scripts\plugin\ckeditor\samples\inlinebycode.html" />
+    <Content Include="Scripts\plugin\ckeditor\samples\inlinetextarea.html" />
+    <Content Include="Scripts\plugin\ckeditor\samples\jquery.html" />
+    <Content Include="Scripts\plugin\ckeditor\samples\plugins\dialog\assets\my_dialog.js" />
+    <Content Include="Scripts\plugin\ckeditor\samples\plugins\dialog\dialog.html" />
+    <Content Include="Scripts\plugin\ckeditor\samples\plugins\enterkey\enterkey.html" />
+    <Content Include="Scripts\plugin\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\outputforflash.swf" />
+    <Content Include="Scripts\plugin\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\swfobject.js" />
+    <Content Include="Scripts\plugin\ckeditor\samples\plugins\htmlwriter\outputforflash.html" />
+    <Content Include="Scripts\plugin\ckeditor\samples\plugins\htmlwriter\outputhtml.html" />
+    <Content Include="Scripts\plugin\ckeditor\samples\plugins\magicline\magicline.html" />
+    <Content Include="Scripts\plugin\ckeditor\samples\plugins\toolbar\toolbar.html" />
+    <Content Include="Scripts\plugin\ckeditor\samples\plugins\wysiwygarea\fullpage.html" />
+    <Content Include="Scripts\plugin\ckeditor\samples\readonly.html" />
+    <Content Include="Scripts\plugin\ckeditor\samples\replacebyclass.html" />
+    <Content Include="Scripts\plugin\ckeditor\samples\replacebycode.html" />
+    <Content Include="Scripts\plugin\ckeditor\samples\sample.css" />
+    <Content Include="Scripts\plugin\ckeditor\samples\sample.js" />
+    <Content Include="Scripts\plugin\ckeditor\samples\sample_posteddata.php" />
+    <Content Include="Scripts\plugin\ckeditor\samples\tabindex.html" />
+    <Content Include="Scripts\plugin\ckeditor\samples\uicolor.html" />
+    <Content Include="Scripts\plugin\ckeditor\samples\uilanguages.html" />
+    <Content Include="Scripts\plugin\ckeditor\samples\xhtmlstyle.html" />
+    <Content Include="Scripts\plugin\ckeditor\skins\moono\dialog.css" />
+    <Content Include="Scripts\plugin\ckeditor\skins\moono\dialog_ie.css" />
+    <Content Include="Scripts\plugin\ckeditor\skins\moono\dialog_ie7.css" />
+    <Content Include="Scripts\plugin\ckeditor\skins\moono\dialog_ie8.css" />
+    <Content Include="Scripts\plugin\ckeditor\skins\moono\dialog_iequirks.css" />
+    <Content Include="Scripts\plugin\ckeditor\skins\moono\dialog_opera.css" />
+    <Content Include="Scripts\plugin\ckeditor\skins\moono\editor.css" />
+    <Content Include="Scripts\plugin\ckeditor\skins\moono\editor_gecko.css" />
+    <Content Include="Scripts\plugin\ckeditor\skins\moono\editor_ie.css" />
+    <Content Include="Scripts\plugin\ckeditor\skins\moono\editor_ie7.css" />
+    <Content Include="Scripts\plugin\ckeditor\skins\moono\editor_ie8.css" />
+    <Content Include="Scripts\plugin\ckeditor\skins\moono\editor_iequirks.css" />
+    <Content Include="Scripts\plugin\ckeditor\skins\moono\icons.png" />
+    <Content Include="Scripts\plugin\ckeditor\skins\moono\icons_hidpi.png" />
+    <Content Include="Scripts\plugin\ckeditor\skins\moono\images\arrow.png" />
+    <Content Include="Scripts\plugin\ckeditor\skins\moono\images\close.png" />
+    <Content Include="Scripts\plugin\ckeditor\skins\moono\images\hidpi\close.png" />
+    <Content Include="Scripts\plugin\ckeditor\skins\moono\images\hidpi\lock-open.png" />
+    <Content Include="Scripts\plugin\ckeditor\skins\moono\images\hidpi\lock.png" />
+    <Content Include="Scripts\plugin\ckeditor\skins\moono\images\hidpi\refresh.png" />
+    <Content Include="Scripts\plugin\ckeditor\skins\moono\images\lock-open.png" />
+    <Content Include="Scripts\plugin\ckeditor\skins\moono\images\lock.png" />
+    <Content Include="Scripts\plugin\ckeditor\skins\moono\images\refresh.png" />
+    <Content Include="Scripts\plugin\ckeditor\styles.js" />
+    <Content Include="Scripts\plugin\colorpicker\bootstrap-colorpicker.js" />
+    <Content Include="Scripts\plugin\colorpicker\bootstrap-colorpicker.min.js" />
+    <Content Include="Scripts\plugin\datatables\ColReorder.min.js" />
+    <Content Include="Scripts\plugin\datatables\ColVis.min.js" />
+    <Content Include="Scripts\plugin\datatables\DT_bootstrap.js" />
+    <Content Include="Scripts\plugin\datatables\FixedColumns.min.js" />
+    <Content Include="Scripts\plugin\datatables\jquery.dataTables-cust.js" />
+    <Content Include="Scripts\plugin\datatables\jquery.dataTables-cust.min.js" />
+    <Content Include="Scripts\plugin\datatables\media\css\TableTools.css" />
+    <Content Include="Scripts\plugin\datatables\media\css\TableTools_JUI.css" />
+    <Content Include="Scripts\plugin\datatables\media\images\background.png" />
+    <Content Include="Scripts\plugin\datatables\media\images\collection.png" />
+    <Content Include="Scripts\plugin\datatables\media\images\collection_hover.png" />
+    <Content Include="Scripts\plugin\datatables\media\images\copy.png" />
+    <Content Include="Scripts\plugin\datatables\media\images\copy_hover.png" />
+    <Content Include="Scripts\plugin\datatables\media\images\csv.png" />
+    <Content Include="Scripts\plugin\datatables\media\images\csv_hover.png" />
+    <Content Include="Scripts\plugin\datatables\media\images\pdf.png" />
+    <Content Include="Scripts\plugin\datatables\media\images\pdf_hover.png" />
+    <Content Include="Scripts\plugin\datatables\media\images\print.png" />
+    <Content Include="Scripts\plugin\datatables\media\images\print_hover.png" />
+    <Content Include="Scripts\plugin\datatables\media\images\xls.png" />
+    <Content Include="Scripts\plugin\datatables\media\images\xls_hover.png" />
+    <Content Include="Scripts\plugin\datatables\media\js\TableTools.js" />
+    <Content Include="Scripts\plugin\datatables\media\js\TableTools.min.js" />
+    <Content Include="Scripts\plugin\datatables\media\js\ZeroClipboard.js" />
+    <Content Include="Scripts\plugin\datatables\media\swf\copy_csv_xls.swf" />
+    <Content Include="Scripts\plugin\datatables\media\swf\copy_csv_xls_pdf.swf" />
+    <Content Include="Scripts\plugin\datatables\ZeroClipboard.js" />
+    <Content Include="Scripts\plugin\delete-table-row\delete-table-row.js" />
+    <Content Include="Scripts\plugin\dropzone\dropzone-amd-module.js" />
+    <Content Include="Scripts\plugin\dropzone\dropzone-amd-module.min.js" />
+    <Content Include="Scripts\plugin\dropzone\dropzone.js" />
+    <Content Include="Scripts\plugin\dropzone\dropzone.min.js" />
+    <Content Include="Scripts\plugin\easy-pie-chart\examples\excanvas.js" />
+    <Content Include="Scripts\plugin\easy-pie-chart\examples\index.html" />
+    <Content Include="Scripts\plugin\easy-pie-chart\examples\style.css" />
+    <Content Include="Scripts\plugin\easy-pie-chart\jquery.easy-pie-chart.js" />
+    <Content Include="Scripts\plugin\easy-pie-chart\jquery.easy-pie-chart.min.js" />
+    <Content Include="Scripts\plugin\fastclick\fastclick.js" />
+    <Content Include="Scripts\plugin\flot\jquery.flot.cust.js" />
+    <Content Include="Scripts\plugin\flot\jquery.flot.fillbetween.js" />
+    <Content Include="Scripts\plugin\flot\jquery.flot.fillbetween.min.js" />
+    <Content Include="Scripts\plugin\flot\jquery.flot.orderBar.js" />
+    <Content Include="Scripts\plugin\flot\jquery.flot.orderBar.min.js" />
+    <Content Include="Scripts\plugin\flot\jquery.flot.pie.js" />
+    <Content Include="Scripts\plugin\flot\jquery.flot.pie.min.js" />
+    <Content Include="Scripts\plugin\flot\jquery.flot.resize.js" />
+    <Content Include="Scripts\plugin\flot\jquery.flot.resize.min.js" />
+    <Content Include="Scripts\plugin\flot\jquery.flot.tooltip.js" />
+    <Content Include="Scripts\plugin\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="Scripts\plugin\fuelux\wizard\wizard.js" />
+    <Content Include="Scripts\plugin\fullcalendar\jquery.fullcalendar.js" />
+    <Content Include="Scripts\plugin\fullcalendar\jquery.fullcalendar.min.js" />
+    <Content Include="Scripts\plugin\ie-placeholder\jquery.placeholder.min.js" />
+    <Content Include="Scripts\plugin\ion-slider\ion.rangeSlider.js" />
+    <Content Include="Scripts\plugin\ion-slider\ion.rangeSlider.min.js" />
+    <Content Include="Scripts\plugin\jquery-form\jquery-form.min.js" />
+    <Content Include="Scripts\plugin\jquery-nestable\jquery.nestable.js" />
+    <Content Include="Scripts\plugin\jquery-touch\jquery.ui.touch-punch.js" />
+    <Content Include="Scripts\plugin\jquery-touch\jquery.ui.touch-punch.min.js" />
+    <Content Include="Scripts\plugin\jquery-validate\jquery.validate.min.js" />
+    <Content Include="Scripts\plugin\js-migrate\jquery-migrate-1.2.1.js" />
+    <Content Include="Scripts\plugin\js-migrate\jquery-migrate-1.2.1.min.js" />
+    <Content Include="Scripts\plugin\knob\jquery.knob.js" />
+    <Content Include="Scripts\plugin\knob\jquery.knob.min.js" />
+    <Content Include="Scripts\plugin\markdown\bootstrap-markdown.js" />
+    <Content Include="Scripts\plugin\markdown\bootstrap-markdown.min.js" />
+    <Content Include="Scripts\plugin\markdown\markdown.js" />
+    <Content Include="Scripts\plugin\markdown\markdown.min.js" />
+    <Content Include="Scripts\plugin\markdown\to-markdown.js" />
+    <Content Include="Scripts\plugin\markdown\to-markdown.min.js" />
+    <Content Include="Scripts\plugin\masked-input\jquery.maskedinput.js" />
+    <Content Include="Scripts\plugin\masked-input\jquery.maskedinput.min.js" />
+    <Content Include="Scripts\plugin\maxlength\bootstrap-maxlength.js" />
+    <Content Include="Scripts\plugin\maxlength\bootstrap-maxlength.min.js" />
+    <Content Include="Scripts\plugin\morris\morris-chart-settings.js" />
+    <Content Include="Scripts\plugin\morris\morris.js" />
+    <Content Include="Scripts\plugin\morris\morris.min.js" />
+    <Content Include="Scripts\plugin\morris\raphael.2.1.0.min.js" />
+    <Content Include="Scripts\plugin\msie-fix\jquery.mb.browser.js" />
+    <Content Include="Scripts\plugin\msie-fix\jquery.mb.browser.min.js" />
+    <Content Include="Scripts\plugin\multiselect\bootstrap-multiselect.js" />
+    <Content Include="Scripts\plugin\multiselect\bootstrap-multiselect.min.js" />
+    <Content Include="Scripts\plugin\noUiSlider\jquery.nouislider.css" />
+    <Content Include="Scripts\plugin\noUiSlider\jquery.nouislider.js" />
+    <Content Include="Scripts\plugin\noUiSlider\jquery.nouislider.min.js" />
+    <Content Include="Scripts\plugin\pace\pace.min.js" />
+    <Content Include="Scripts\plugin\select2\readme.txt" />
+    <Content Include="Scripts\plugin\select2\select2.js" />
+    <Content Include="Scripts\plugin\select2\select2.min.js" />
+    <Content Include="Scripts\plugin\selectToUISlider\selectToUISlider.jQuery.js" />
+    <Content Include="Scripts\plugin\selectToUISlider\selectToUISlider.jQuery.min.js" />
+    <Content Include="Scripts\plugin\sparkline\jquery.sparkline.js" />
+    <Content Include="Scripts\plugin\sparkline\jquery.sparkline.min.js" />
+    <Content Include="Scripts\plugin\summernote\summernote.js" />
+    <Content Include="Scripts\plugin\superbox\superbox.js" />
+    <Content Include="Scripts\plugin\superbox\superbox.min.js" />
+    <Content Include="Scripts\plugin\throttle-denounce\jquery.ba-throttle-debounce.min.js" />
+    <Content Include="Scripts\plugin\typeahead\typeahead.js" />
+    <Content Include="Scripts\plugin\typeahead\typeahead.min.js" />
+    <Content Include="Scripts\plugin\typeahead\typeaheadjs.js" />
+    <Content Include="Scripts\plugin\typeahead\typeaheadjs.min.js" />
+    <Content Include="Scripts\plugin\vectormap\jquery-jvectormap-1.1.1.css" />
+    <Content Include="Scripts\plugin\vectormap\jquery-jvectormap-1.1.1.min.js" />
+    <Content Include="Scripts\plugin\vectormap\jquery-jvectormap-1.2.2.css" />
+    <Content Include="Scripts\plugin\vectormap\jquery-jvectormap-1.2.2.min.js" />
+    <Content Include="Scripts\plugin\vectormap\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="Scripts\plugin\x-editable\jquery.mockjax.min.js" />
+    <Content Include="Scripts\plugin\x-editable\moment.min.js" />
+    <Content Include="Scripts\plugin\x-editable\x-editable.js" />
+    <Content Include="Scripts\plugin\x-editable\x-editable.min.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\smartwidgets\jarvis.widget.js" />
+    <Content Include="Scripts\smartwidgets\jarvis.widget.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Occurrence\BombThreatReport.cshtml" />
+    <Content Include="Views\Occurrence\SuspectDescriptionSheet.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\EmailAddress.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\GridForeignKey.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Integer.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Number.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Password.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Time.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Url.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_MenuPartial.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\Users.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\UserDetails.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\SiteDetails.cshtml" />
+    <Content Include="Views\Admin\Sites.cshtml" />
+    <Content Include="Views\Admin\Shifts.cshtml" />
+    <Content Include="Scripts\libs\jquery-2.1.0.min.map" />
+    <Content Include="Views\Shared\_SupervisorLayout.cshtml" />
+    <Content Include="Views\Occurrence\BookOn.cshtml" />
+    <Content Include="Views\Occurrence\BookonUsers.cshtml" />
+    <Content Include="Views\Occurrence\ActiveSheet.cshtml" />
+    <Content Include="Views\BookOn\Index.cshtml" />
+    <Content Include="Views\Home\DateTime.cshtml" />
+    <Content Include="Views\Customer\CustomerContacts.cshtml" />
+    <Content Include="Views\Customer\Customers.cshtml" />
+    <Content Include="Views\Occurrence\IncidentDetail.cshtml" />
+    <Content Include="Views\Reports\OccuranceSite.cshtml" />
+    <Content Include="Views\Reports\OccurrenceEntries.cshtml" />
+    <Content Include="Views\Reports\OccurrencesBySearch.cshtml" />
+    <Content Include="Views\Admin\UserSites.cshtml" />
+    <Content Include="Views\Admin\UserTasks.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CustomerContactsDetails.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CustomerDetails.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\LogEntry.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\UserSiteEditor.cshtml" />
+    <Content Include="Views\Occurrence\BookOff.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Occurrence\CheckCallEntry.cshtml" />
+    <Content Include="Views\Occurrence\AdditionalReports.cshtml" />
+    <Content Include="Templates\QSD020.pdf" />
+    <Content Include="Templates\QSD021.pdf" />
+    <Content Include="Templates\QSD022.pdf" />
+    <Content Include="Templates\QSD023.pdf" />
+    <Content Include="Templates\QSD023A.pdf" />
+    <Content Include="Views\Occurrence\Template.cshtml" />
+    <Content Include="Views\Occurrence\IncidentReportNotification.cshtml" />
+    <Content Include="Scripts\plugin\bootstrap-tags\bootstrap-tagsinput.min.js.map" />
+    <Content Include="Scripts\plugin\ckeditor\CHANGES.md" />
+    <Content Include="Scripts\plugin\ckeditor\LICENSE.md" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\scayt\LICENSE.md" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\scayt\README.md" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\wsc\LICENSE.md" />
+    <Content Include="Scripts\plugin\ckeditor\plugins\wsc\README.md" />
+    <Content Include="Scripts\plugin\ckeditor\README.md" />
+    <Content Include="Scripts\plugin\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\outputforflash.fla" />
+    <Content Include="Scripts\plugin\ckeditor\skins\moono\readme.md" />
+    <Content Include="Scripts\plugin\datatables\media\as3\lib\AlivePDF.swc" />
+    <Content Include="Scripts\plugin\datatables\media\as3\ZeroClipboard.as" />
+    <Content Include="Scripts\plugin\datatables\media\as3\ZeroClipboardPdf.as" />
+    <Content Include="Scripts\plugin\datatables\media\images\psd\collection.psd" />
+    <Content Include="Scripts\plugin\datatables\media\images\psd\copy document.psd" />
+    <Content Include="Scripts\plugin\datatables\media\images\psd\file_types.psd" />
+    <Content Include="Scripts\plugin\datatables\media\images\psd\printer.psd" />
+    <Content Include="Scripts\plugin\datatables\media\js\TableTools.min.js.gz" />
+    <Content Include="Views\Shared\_ChatWidgetPartial.cshtml" />
+    <Content Include="Views\Admin\IncidentDocuments.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Currency.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Email.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\ReportTemplate.cshtml" />
+    <Content Include="Views\Admin\OldTemplates.cshtml" />
+    <Content Include="Views\Occurrence\FireOutbreakReport.cshtml" />
+    <Content Include="Views\Occurrence\AccidentNearMissReport.cshtml" />
+    <Content Include="Views\Occurrence\AccidentInvestigationWitnessForm.cshtml" />
+    <Content Include="Views\Admin\CheckCallIntervals.cshtml" />
+    <Content Include="Views\Occurrence\PendingCheckCallEntry.cshtml" />
+    <Content Include="Views\Reports\IncidentReportNotification.cshtml" />
+    <Content Include="Views\Reports\OccurrenceLogSearch.cshtml" />
+    <Content Include="Views\Reports\SupervisorReport.cshtml" />
+    <Content Include="Views\Occurrence\UploadAttachments.cshtml" />
+    <Content Include="Views\Reports\Last10BookOn.cshtml" />
+    <Content Include="Views\Reports\Last10BookOff.cshtml" />
+    <Content Include="Views\Reports\Last10Incidents.cshtml" />
+    <Content Include="Views\Reports\SiteWiseIncidentCounts.cshtml" />
+    <Content Include="Views\Reports\BookOnBookOffReport.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="bundler\node_modules\debug\lib\" />
+    <Folder Include="bundler\node_modules\node-sass\lib\" />
+    <Folder Include="bundler\node_modules\node-sass\node_modules\colors\" />
+    <Folder Include="bundler\node_modules\node-sass\node_modules\mkdirp\examples\" />
+    <Folder Include="bundler\node_modules\node-sass\node_modules\mkdirp\test\" />
+    <Folder Include="bundler\node_modules\node-sass\node_modules\mocha\bin\" />
+    <Folder Include="bundler\node_modules\node-sass\node_modules\mocha\images\" />
+    <Folder Include="bundler\node_modules\node-sass\node_modules\mocha\lib\browser\" />
+    <Folder Include="bundler\node_modules\node-sass\node_modules\mocha\lib\interfaces\" />
+    <Folder Include="bundler\node_modules\node-sass\node_modules\mocha\lib\reporters\templates\" />
+    <Folder Include="bundler\node_modules\node-sass\node_modules\mocha\node_modules\commander\lib\" />
+    <Folder Include="bundler\node_modules\node-sass\node_modules\mocha\node_modules\diff\" />
+    <Folder Include="bundler\node_modules\node-sass\node_modules\mocha\node_modules\glob\examples\" />
+    <Folder Include="bundler\node_modules\node-sass\node_modules\mocha\node_modules\glob\node_modules\graceful-fs\test\" />
+    <Folder Include="bundler\node_modules\node-sass\node_modules\mocha\node_modules\glob\node_modules\inherits\" />
+    <Folder Include="bundler\node_modules\node-sass\node_modules\mocha\node_modules\glob\node_modules\minimatch\node_modules\lru-cache\lib\" />
+    <Folder Include="bundler\node_modules\node-sass\node_modules\mocha\node_modules\glob\node_modules\minimatch\node_modules\lru-cache\test\" />
+    <Folder Include="bundler\node_modules\node-sass\node_modules\mocha\node_modules\glob\node_modules\minimatch\node_modules\sigmund\test\" />
+    <Folder Include="bundler\node_modules\node-sass\node_modules\mocha\node_modules\glob\node_modules\minimatch\test\" />
+    <Folder Include="bundler\node_modules\node-sass\node_modules\mocha\node_modules\glob\test\" />
+    <Folder Include="bundler\node_modules\node-sass\node_modules\mocha\node_modules\growl\lib\" />
+    <Folder Include="bundler\node_modules\node-sass\node_modules\mocha\node_modules\jade\bin\" />
+    <Folder Include="bundler\node_modules\node-sass\node_modules\mocha\node_modules\jade\lib\nodes\" />
+    <Folder Include="bundler\node_modules\node-sass\node_modules\mocha\node_modules\jade\node_modules\mkdirp\examples\" />
+    <Folder Include="bundler\node_modules\node-sass\node_modules\mocha\node_modules\jade\node_modules\mkdirp\test\" />
+    <Folder Include="bundler\node_modules\node-sass\node_modules\mocha\node_modules\jade\testing\" />
+    <Folder Include="bundler\node_modules\node-sass\node_modules\node-watch\lib\" />
+    <Folder Include="bundler\node_modules\node-sass\node_modules\optimist\example\" />
+    <Folder Include="bundler\node_modules\node-sass\node_modules\optimist\node_modules\minimist\example\" />
+    <Folder Include="bundler\node_modules\node-sass\node_modules\optimist\node_modules\minimist\test\" />
+    <Folder Include="bundler\node_modules\node-sass\node_modules\optimist\node_modules\wordwrap\example\" />
+    <Folder Include="bundler\node_modules\node-sass\node_modules\optimist\node_modules\wordwrap\test\" />
+    <Folder Include="bundler\node_modules\node-sass\node_modules\optimist\test\_\" />
+    <Folder Include="bundler\node_modules\node-sass\precompiled\win32-ia32\" />
+    <Folder Include="bundler\node_modules\node-sass\precompiled\win32-x64\" />
+    <Folder Include="Filters\" />
+    <Folder Include="Temp\" />
+    <Folder Include="Views\Incident\" />
+    <Folder Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="ReportTemplates\OccurrenceCheckCalls.resx">
+      <DependentUpon>OccurrenceCheckCalls.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportTemplates\OccurrenceLogItems.resx">
+      <DependentUpon>OccurrenceLogItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportTemplates\OccurrenceMain.resx">
+      <DependentUpon>OccurrenceMain.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Data\EDOBDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EDOBDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49805</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49805/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <UserProperties UseCdnSupport="False" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
